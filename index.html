@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宜昌键新网络科技有限公司 - 数字化转型服务商</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #4361ee;
+            --primary-light: #7b8cff;
+            --secondary: #7209b7;
+            --accent: #f72585;
+            --bg-light: #f8f9fc;
+            --bg-white: #ffffff;
+            --text-dark: #1a1a2e;
+            --text-gray: #6b7280;
+            --text-light: #9ca3af;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            --gradient-accent: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', 'Poppins', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* 导航栏 */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 18px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon-box {
+            width: 45px;
+            height: 45px;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            box-shadow: 0 8px 25px rgba(67, 97, 238, 0.3);
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            padding: 12px 28px;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(67, 97, 238, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(67, 97, 238, 0.4);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            padding: 160px 50px 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.5;
+        }
+
+        .hero-bg-1 {
+            width: 600px;
+            height: 600px;
+            background: rgba(67, 97, 238, 0.2);
+            top: -200px;
+            right: -200px;
+        }
+
+        .hero-bg-2 {
+            width: 400px;
+            height: 400px;
+            background: rgba(247, 37, 133, 0.15);
+            bottom: -100px;
+            left: -100px;
+        }
+
+        .hero-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            color: var(--text-dark);
+        }
+
+        .hero-content h1 .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: var(--text-gray);
+            margin-bottom: 35px;
+            line-height: 1.8;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .badge-item {
+            padding: 10px 20px;
+            background: white;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge-item .icon {
+            font-size: 1.1rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-main {
+            padding: 16px 35px;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(67, 97, 238, 0.35);
+        }
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(67, 97, 238, 0.45);
+        }
+
+        .btn-outline {
+            padding: 16px 35px;
+            background: white;
+            color: var(--text-dark);
+            border: 2px solid #e5e7eb;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-img-main {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 30px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.1);
+        }
+
+        .floating-card-box {
+            position: absolute;
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            animation: floatAnim 3s ease-in-out infinite;
+        }
+
+        .floating-card-box:nth-child(2) {
+            top: 30px;
+            left: -40px;
+        }
+
+        .floating-card-box:nth-child(3) {
+            bottom: 50px;
+            right: -30px;
+            animation-delay: 1s;
+        }
+
+        @keyframes floatAnim {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .floating-card-box h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .floating-card-box p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .floating-card-box .stat {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* 服务区域 */
+        .services {
+            padding: 100px 50px;
+            background: white;
+        }
+
+        .section-container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .section-desc {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-light);
+            border-radius: 24px;
+            padding: 40px 35px;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+            background: white;
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.1), rgba(114, 9, 183, 0.1));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 25px;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* 关于我们 */
+        .about-section {
+            padding: 100px 50px;
+            background: linear-gradient(180deg, var(--bg-light) 0%, white 100%);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .about-img {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .about-img:first-child {
+            grid-column: span 2;
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .about-content h2 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about-content > p {
+            font-size: 1.05rem;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .about-features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .about-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .about-feature-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.15), rgba(114, 9, 183, 0.15));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .about-feature-item span {
+            font-size: 1rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* 产品展示 */
+        .products-section {
+            padding: 100px 50px;
+            background: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .product-card {
+            background: var(--bg-light);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-img {
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-info h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .product-info p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* 统计数据 */
+        .stats-section {
+            padding: 80px 50px;
+            background: var(--gradient);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            text-align: center;
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* 合作伙伴 */
+        .partners-section {
+            padding: 80px 50px;
+            background: white;
+        }
+
+        .partners-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .partner-logo {
+            width: 120px;
+            height: 60px;
+            background: var(--bg-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .partner-logo:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* 页脚 */
+        footer {
+            padding: 60px 50px 30px;
+            background: var(--text-dark);
+            color: white;
+        }
+
+        .footer-container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand h3 span {
+            color: var(--primary-light);
+        }
+
+        .footer-brand p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 15px 25px;
+            }
+            .nav-links, .nav-cta {
+                display: none;
+            }
+            .hero {
+                padding: 120px 25px 60px;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .hero-img-main {
+                height: 300px;
+            }
+            .services, .about-section, .products-section, .stats-section {
+                padding: 60px 25px;
+            }
+            .services-grid, .products-grid, .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo-box">
+                <div class="logo-icon-box">🔑</div>
+                <div class="logo-text">宜昌<span>键新</span></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#services">服务项目</a></li>
+                <li><a href="#about">关于我们</a></li>
+                <li><a href="#products">产品中心</a></li>
+                <li><a href="#cases">成功案例</a></li>
+            </ul>
+            <button class="nav-cta">立即咨询</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-bg-shape hero-bg-1"></div>
+        <div class="hero-bg-shape hero-bg-2"></div>
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>
+                    宜昌键新<br>
+                    <span class="highlight">网络科技有限公司</span>
+                </h1>
+                <p>专业的数字化转型服务商，专注于为企业提供网站建设、小程序开发、APP定制、电商系统开发等一站式互联网解决方案，助力企业畅享数字化红利。</p>
+                
+                <div class="hero-badges">
+                    <div class="badge-item">
+                        <span class="icon">🎯</span>
+                        <span>精准定制</span>
+                    </div>
+                    <div class="badge-item">
+                        <span class="icon">⚡</span>
+                        <span>快速交付</span>
+                    </div>
+                    <div class="badge-item">
+                        <span class="icon">🛡️</span>
+                        <span>安全可靠</span>
+                    </div>
+                    <div class="badge-item">
+                        <span class="icon">💎</span>
+                        <span>品质保障</span>
+                    </div>
+                </div>
+                
+                <div class="hero-buttons">
+                    <button class="btn-main">获取方案</button>
+                    <button class="btn-outline">了解更多</button>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700" alt="数字化办公" class="hero-img-main">
+                <div class="floating-card-box">
+                    <div class="stat">500+</div>
+                    <p>成功项目</p>
+                </div>
+                <div class="floating-card-box">
+                    <h4>客户满意度</h4>
+                    <div class="stat">98%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-tag">WHAT WE DO</p>
+                <h2 class="section-title">专业服务项目</h2>
+                <p class="section-desc">全方位互联网技术服务，为企业数字化转型保驾护航</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>网站建设开发</h3>
+                    <p>企业官网、品牌网站、响应式网站开发，定制化设计，打造专业的互联网形象。</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>小程序开发</h3>
+                    <p>微信小程序、支付宝小程序、百度小程序定制开发，快速触达海量用户。</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🛒</div>
+                    <h3>电商系统开发</h3>
+                    <p>B2C、B2B2C、O2O等电商平台开发，集成支付、物流、营销等完整功能。</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>APP应用开发</h3>
+                    <p>iOS、Android原生开发，跨平台框架开发，满足不同业务场景需求。</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">☁️</div>
+                    <h3>云服务运维</h3>
+                    <p>服务器部署、网站托管、云架构设计，提供稳定的运维保障。</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>UI/UX设计</h3>
+                    <p>专业的界面设计与用户体验优化，提升产品交互感受与品牌形象。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-images">
+                    <div class="about-img">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700" alt="团队协作">
+                    </div>
+                    <div class="about-img">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=500" alt="技术研发">
+                    </div>
+                    <div class="about-img">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=500" alt="工作场景">
+                    </div>
+                </div>
+                
+                <div class="about-content">
+                    <h2>关于<span>键新网络</span></h2>
+                    <p>宜昌键新网络科技有限公司成立于宜昌，是一家专注于互联网技术服务的创新型企业。团队汇聚了资深的开发工程师、设计师和项目管理者，致力于为宜昌及周边地区的企业提供高品质的数字化解决方案。</p>
+                    
+                    <div class="about-features-list">
+                        <div class="about-feature-item">
+                            <div class="about-feature-icon">✓</div>
+                            <span>7×24小时技术支持，快速响应客户需求</span>
+                        </div>
+                        <div class="about-feature-item">
+                            <div class="about-feature-icon">✓</div>
+                            <span>透明报价，无隐形收费，项目性价比高</span>
+                        </div>
+                        <div class="about-feature-item">
+                            <div class="about-feature-icon">✓</div>
+                            <span>严格代码规范，确保系统安全稳定运行</span>
+                        </div>
+                        <div class="about-feature-item">
+                            <div class="about-feature-icon">✓</div>
+                            <span>完善的售后服务，项目交付后持续跟进</span>
+                        </div>
+                        <div class="about-feature-item">
+                            <div class="about-feature-icon">✓</div>
+                            <span>深耕本地市场，更懂本土企业需求</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section" id="products">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-tag">OUR PRODUCTS</p>
+                <h2 class="section-title">经典案例展示</h2>
+                <p class="section-desc">众多成功案例，验证专业实力</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500" alt="电商平台">
+                    </div>
+                    <div class="product-info">
+                        <h3>企业电商平台</h3>
+                        <p>某商贸公司B2C商城系统</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=500" alt="企业管理">
+                    </div>
+                    <div class="product-info">
+                        <h3>企业管理SaaS</h3>
+                        <p>宜昌本地企业管理系统</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500" alt="官网定制">
+                    </div>
+                    <div class="product-info">
+                        <h3>品牌官网定制</h3>
+                        <p>某集团企业官方网站</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=500" alt="小程序">
+                    </div>
+                    <div class="product-info">
+                        <h3>行业小程序</h3>
+                        <p>本地生活服务类小程序</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="section-container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">完成项目</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">300+</div>
+                    <div class="stat-label">服务客户</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">技术团队</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8年</div>
+                    <div class="stat-label">行业经验</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners-section">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-tag">OUR PARTNERS</p>
+                <h2 class="section-title">合作客户</h2>
+                <p class="section-desc">众多企业信赖之选</p>
+            </div>
+            
+            <div class="partners-grid">
+                <div class="partner-logo">某知名企业</div>
+                <div class="partner-logo">科技集团</div>
+                <div class="partner-logo">商贸公司</div>
+                <div class="partner-logo">餐饮连锁</div>
+                <div class="partner-logo">地产公司</div>
+                <div class="partner-logo">教育机构</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>宜昌<span>键新</span>网络科技</h3>
+                    <p>专业的数字化转型服务商，为企业提供网站建设、小程序开发、APP定制、电商系统开发等一站式互联网解决方案。</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>服务项目</h4>
+                    <ul>
+                        <li><a href="#">网站建设</a></li>
+                        <li><a href="#">小程序开发</a></li>
+                        <li><a href="#">APP开发</a></li>
+                        <li><a href="#">电商系统</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">公司介绍</a></li>
+                        <li><a href="#">核心优势</a></li>
+                        <li><a href="#">成功案例</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">电话咨询</a></li>
+                        <li><a href="#">在线客服</a></li>
+                        <li><a href="#">地址信息</a></li>
+                        <li><a href="#">关注我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 宜昌键新网络科技有限公司 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 卡片动画
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.service-card, .product-card').forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            el.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
